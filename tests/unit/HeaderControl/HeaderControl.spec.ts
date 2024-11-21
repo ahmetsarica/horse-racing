@@ -1,15 +1,16 @@
 import { mount, VueWrapper } from '@vue/test-utils';
 import { createStore, Store } from 'vuex';
 import HeaderControl from '@/components/headerControl/HeaderControl.vue';
+import { Program } from '@/store/modules/program';
 
 interface State {
-  programList: any[];
+  programList: Program[];
   isRaceStarted: boolean;
 }
 
 describe('HeaderControl.vue', () => {
   let store: Store<State>;
-  let wrapper: VueWrapper<any>;
+  let wrapper: VueWrapper<unknown>;
 
   beforeEach(() => {
     store = createStore<State>({

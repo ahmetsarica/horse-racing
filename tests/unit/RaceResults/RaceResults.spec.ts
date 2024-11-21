@@ -2,14 +2,15 @@ import { mount, VueWrapper } from '@vue/test-utils';
 import { createStore, Store } from 'vuex';
 import RaceResults from '@/components/raceResults/RaceResults.vue';
 import BlankPage from '@/components/blankPage/BlankPage.vue';
+import { Result } from '@/store/modules/results';
 
 interface State {
-  resultList: any[];
+  resultList: Result[];
 }
 
 describe('RaceResults.vue', () => {
   let store: Store<State>;
-  let wrapper: VueWrapper<any>;
+  let wrapper: VueWrapper<unknown>;
 
   beforeEach(() => {
     store = createStore<State>({
@@ -44,8 +45,20 @@ describe('RaceResults.vue', () => {
         lapIndex: 1,
         lapLength: '1200m',
         raceHorses: [
-          { id: 1, name: 'Horse 1', duration: 1 },
-          { id: 2, name: 'Horse 2', duration: 1 },
+          {
+            id: 1,
+            name: 'Horse 1',
+            condition: 20,
+            color: 'red',
+            duration: '1',
+          },
+          {
+            id: 2,
+            name: 'Horse 2',
+            condition: 80,
+            color: 'yellow',
+            duration: '1',
+          },
         ],
       },
     ];

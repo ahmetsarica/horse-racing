@@ -10,7 +10,7 @@ interface State {
 
 describe('RaceProgram.vue', () => {
   let store: Store<State>;
-  let wrapper: VueWrapper<any>;
+  let wrapper: VueWrapper<unknown>;
 
   beforeEach(() => {
     store = createStore<State>({

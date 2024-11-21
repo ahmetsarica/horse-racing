@@ -2,7 +2,7 @@ import { mount, VueWrapper } from '@vue/test-utils';
 import BlankPage from '@/components/blankPage/BlankPage.vue';
 
 describe('BlankPage.vue', () => {
-  let wrapper: VueWrapper<any>;
+  let wrapper: VueWrapper<unknown>;
 
   beforeEach(() => {
     wrapper = mount(BlankPage, {
