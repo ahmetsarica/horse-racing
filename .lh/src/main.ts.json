@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/main.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1732227500836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1732227510842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,14 @@\n-import { createApp } from 'vue';\r\n-import App from './App.vue';\r\n-import store from './store';\r\n-import '@/assets/styles/styles.scss';\r\n+import { createApp } from \"vue\";\r\n+import App from \"./App.vue\";\r\n+import store from \"./store\";\r\n+import \"@/assets/styles/styles.scss\";\r\n \r\n-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';\r\n+import { library } from \"@fortawesome/fontawesome-svg-core\";\r\n+import { FontAwesomeIcon } from \"@fortawesome/vue-fontawesome\";\r\n+import { faHorse } from \"@fortawesome/free-solid-svg-icons\";\r\n \r\n+library.add(faHorse);\r\n+\r\n const app = createApp(App);\r\n-app.component('font-awesome-icon', FontAwesomeIcon);\r\n-app.use(store).mount('#app');\r\n+app.component(\"font-awesome-icon\", FontAwesomeIcon);\r\n+app.use(store).mount(\"#app\");\r\n"
+                }
+            ],
+            "date": 1732227500836,
+            "name": "Commit-0",
+            "content": "import { createApp } from \"vue\";\r\nimport App from \"./App.vue\";\r\nimport store from \"./store\";\r\nimport \"@/assets/styles/styles.scss\";\r\n\r\nimport { FontAwesomeIcon } from \"@fortawesome/vue-fontawesome\";\r\n\r\n\r\nconst app = createApp(App);\r\napp.component(\"font-awesome-icon\", FontAwesomeIcon);\r\napp.use(store).mount(\"#app\");\r\n"
+        }
+    ]
+}

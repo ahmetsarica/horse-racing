@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/components/raceResults/RaceResults.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1732227304278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1732227304278,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div class=\"flex flex-col h-full\">\r\n    <div class=\"flex flex-col overflow-y-auto h-screen\">\r\n      <template v-if=\"resultList.length > 0\">\r\n        <div class=\"text-center mb-2 font-bold text-lg\">RESULTS</div>\r\n        <div v-for=\"result in resultList\" :key=\"result.lapIndex\">\r\n          <div class=\"text-center font-bold text-md bg-gray-400 text-white\">\r\n            Lap: {{ result.lapIndex }} - {{ result.lapLength }}\r\n          </div>\r\n          <table class=\"min-w-full border border-gray-200 bg-white mb-4 text-xs\">\r\n            <thead\r\n              class=\"bg-gray-200 text-gray-600 uppercase text-xs font-bold\"\r\n            >\r\n              <tr>\r\n                <th class=\"py-2 px-4 border-r border-gray-300 w-1/12\">Pos</th>\r\n                <th class=\"py-2 px-4 border-r border-gray-300 w-7/12\">Name</th>\r\n                <th class=\"py-2 px-4 border-r border-gray-300 w-4/12\">\r\n                  Duration\r\n                </th>\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr\r\n                class=\"border-t border-gray-200 hover:bg-gray-100\"\r\n                v-for=\"(horse, index) in result.raceHorses\"\r\n                :key=\"horse.id\"\r\n              >\r\n                <td class=\"py-2 px-4 border-r border-gray-300 w-1/12\">\r\n                  {{ index + 1 }}\r\n                </td>\r\n                <td class=\"py-2 px-4 border-r border-gray-300 w-7/12\">\r\n                  {{ horse.name }}\r\n                </td>\r\n                <td class=\"py-2 px-4 border-r border-gray-300 w-4/12\">\r\n                  {{ horse.duration }}sec\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </template>\r\n      <template v-else>\r\n        <BlankPage\r\n          title=\"No Results Found\"\r\n          description=\"Don't worry, reports will appear after you click start!\"\r\n        />\r\n      </template>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script lang=\"ts\">\r\nimport { defineComponent, computed } from 'vue';\r\nimport { useStore } from 'vuex';\r\nimport BlankPage from '@/components/blankPage/BlankPage.vue';\r\n\r\nexport default defineComponent({\r\n  name: 'RaceResults',\r\n  components: {\r\n    BlankPage,\r\n  },\r\n  setup() {\r\n    const store = useStore();\r\n\r\n    // This computed property fetches all results from the Vuex store\r\n    const resultList = computed(() => store.getters['getAllResults']);\r\n\r\n    return {\r\n      resultList,\r\n    };\r\n  },\r\n});\r\n</script>\r\n"
+        }
+    ]
+}
