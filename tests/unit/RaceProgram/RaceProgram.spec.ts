@@ -55,7 +55,7 @@ describe('RaceProgram.vue', () => {
     store.state.programList = programList;
     await wrapper.vm.$nextTick();
 
-    expect(wrapper.find('.text-center.font-bold.text-xl.mb-4').text()).toBe(
+    expect(wrapper.find('.text-center.font-bold.text-lg.mb-4').text()).toBe(
       'PROGRAM'
     );
     expect(wrapper.findAll('[data-test="race-item"]').length).toBe(1);
