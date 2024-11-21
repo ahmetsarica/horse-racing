@@ -2,7 +2,7 @@
   <div class="flex flex-col h-full">
     <div class="flex flex-col overflow-y-auto h-screen">
       <template v-if="resultList.length > 0">
-        <div class="text-center mb-2 font-bold text-lg">RESULTS</div>
+        <div class="text-center mb-4 font-bold text-lg">RESULTS</div>
         <div v-for="result in resultList" :key="result.lapIndex">
           <div class="text-center font-bold text-md bg-gray-400 text-white">
             Lap: {{ result.lapIndex }} - {{ result.lapLength }}

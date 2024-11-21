@@ -4,7 +4,7 @@
     <div class="flex flex-col overflow-y-auto h-screen">
       <!-- If there are programs in the store, display them -->
       <template v-if="programList.length > 0">
-        <div class="text-center font-bold text-xl mb-4">PROGRAM</div>
+        <div class="text-center font-bold text-lg mb-4">PROGRAM</div>
         <!-- For each program, display its details -->
         <div
           v-for="program in programList"
